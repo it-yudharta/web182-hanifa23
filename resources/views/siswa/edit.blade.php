@@ -1,4 +1,4 @@
-<h1>Edit data siswa</h1>
+<h1>Edit data diri</h1>
             @if(session('sukses'))
             <div class="alert alert-success" role="alert">
              {{session('sukses')}}
@@ -27,8 +27,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Agama</label>
-                                <input name="agama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Agama" value="{{$siswa->agama}}">
+                                 <label for="exampleFormControlSelect1">Agama</label>
+                                 <select name="agama" class="form-control" id="exampleFormControlSelect1">
+                                 <option value="Islam" @if($siswa->agama == 'Islam')selected @endif>Islam</option>
+                                 <option value="Kristen" @if($siswa->agama == 'Kristen')selected @endif>Kristen</option>
+                                 <option value="Hindu" @if($siswa->agama == 'Hindu')selected @endif>Hindu</option>
+                                 <option value="Buddha" @if($siswa->agama == 'Buddha')selected @endif>Buddha</option>
+                                </select>
                             </div>
 
                             <div class="form-group">

@@ -71,8 +71,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Agama</label>
-                                <input name="agama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Agama">
+                                 <label for="exampleFormControlSelect1">Agama</label>
+                                 <select name="agama" class="form-control" id="exampleFormControlSelect1">
+                                 <option value="Islam">Islam</option>
+                                 <option value="Kristen">Kristen</option>
+                                 <option value="Hindu">Hindu</option>
+                                 <option value="Buddha">Buddha</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
