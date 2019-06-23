@@ -16,10 +16,14 @@ class CreateSiswaTable extends Migration
         Schema::create('siswa', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('nama');
+            $table->string('tempat_tanggal_lahir');
+            $table->string('kewarganegaraan');
             $table->string('jenis_kelamin');
             $table->string('status');
             $table->string('agama');
+            $table->string('anak_ke');
             $table->text('alamat');
+            $table->string('telpon');
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@
         <div class="container">
         <div class="row">
                 <div class="col-6">
-                    <h1>DATA DIRI</h1>
+                    <h1>BIODATA MAHASISWA</h1>
                 </div>
                 <div class="col-6">
                 <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
@@ -16,21 +16,29 @@
             
             <table class="table table-hover">
                 <tr>
-                    <th>NAMA </th>
+                    <th>NAMA</th>
+                    <th>TEMPAT TANGGAL LAHIR</th>
+                    <th>KEWARGANEGARAAN</th>
                     <th>JENIS KELAMIN</th>
                     <th>STATUS</th>
                     <th>AGAMA</th>
+                    <th>ANAK KE</th>
                     <th>ALAMAT</th>
+                    <th>TELPON</th>
                 </tr>
                 @foreach($data_siswa as $siswa)
                 <tr>
                     <td>{{$siswa->nama}}</td>
+                    <td>{{$siswa->tempat_tanggal_lahir}}</td>
+                    <td>{{$siswa->kewarganegaraan}}</td>
                     <td>{{$siswa->jenis_kelamin}}</td>
                     <td>{{$siswa->status}}</td>
                     <td>{{$siswa->agama}}</td>
+                    <td>{{$siswa->anak_ke}}</td>
                     <td>{{$siswa->alamat}}</td>
+                    <td>{{$siswa->telpon}}</td>
                     <td>
-                        <a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm" onclick="return confirm('Yakin Data Mau Diedit?')">Edit</a>
                         <a href="/siswa/{{$siswa->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Data Mau Dihapus ?')">Delete</a>
                     </td>
                     
@@ -41,12 +49,12 @@
         </div>
  <!-- Modal -->
  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-         <div class="modal-content">
-             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
+ <div class="modal-dialog" role="document">
+ <div class="modal-content">
+ <div class="modal-header">
+ <h5 class="modal-title" id="exampleModalLabel">Data Mahasiswa</h5>
+ <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
                         </button>
                             </div>
                             <div class="modal-body">
@@ -55,6 +63,16 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nama </label>
                                 <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Tempat Tanggal Lahir </label>
+                                <input name="tempat_tanggal_lahir" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tempat Tanggal Lahir">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Kewarganegaraan </label>
+                                <input name="kewarganegaraan" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kewarganegaraan">
                             </div>
 
                             <div class="form-group">
@@ -81,14 +99,29 @@
                             </div>
 
                             <div class="form-group">
+                                 <label for="exampleFormControlSelect1">Anak Ke</label>
+                                 <select name="anak_ke" class="form-control" id="exampleFormControlSelect1">
+                                 <option value="1">1</option>
+                                 <option value="2">2</option>
+                                 <option value="3">3</option>
+                                 <option value="4">4</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Alamat</label>
                                 <textarea name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Telpon</label>
+                                <input name="telpon" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telpon">
                             </div>
 
                        </div>
                      <div class="modal-footer">
                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               <button type="submit" class="btn btn-primary">Submit</button>
+               <button type="submit" class="btn btn-primary onclick="return confirm('Data Berhasil Disimpan')">Submit</button>
                </form>
           </div>
        </div>

@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Siswa extends Model
 {
     protected $table = 'siswa';
-    protected $fillable = ['nama','jenis_kelamin','status','agama','alamat'];
+    protected $fillable = ['nama','tempat_tanggal_lahir','kewarganegaraan','jenis_kelamin','status','agama','anak_ke','alamat','telpon'];
 }
